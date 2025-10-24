@@ -465,7 +465,7 @@ show_system_menu() {
 }
 
 show_main_menu() {
-  local choice=$(menu "Go" "󰀻  Apps\n󰧑  Learn\n󱓞  Trigger\n  Style\n  Setup\n󰉉  Install\n󰭌  Remove\n  Update\n  About\n  System" "" "" "rofi.rasi")
+  local choice=$(menu "Go" "󰀻  Apps\n󰧑  Learn\n󱓞  Trigger\n  Style\n  Setup\n󰉉  Install\n󰭌  Remove\n  Update\n  About\n  System" "" "" "config.rasi")
 
   if [[ -z "$choice" ]]; then
     return 0

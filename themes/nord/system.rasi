@@ -1,4 +1,4 @@
-/* LatiArch Rofi System Menu Configuration - Nord theme */
+/* LatiArch Rofi System Menu Configuration - nord theme */
 
 configuration {
     modi: "drun,run,window";

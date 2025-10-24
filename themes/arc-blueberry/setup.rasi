@@ -1,4 +1,4 @@
-/* LatiArch Rofi Setup Menu Configuration - Arc Blueberry theme */
+/* LatiArch Rofi Setup Menu Configuration - arc-blueberry theme */
 
 configuration {
     modi: "drun,run,window";

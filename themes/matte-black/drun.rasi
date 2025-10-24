@@ -1,4 +1,4 @@
-/* LatiArch Rofi DRUN Configuration - Matte Black theme */
+/* LatiArch Rofi DRUN Configuration - matte-black theme */
 
 configuration {
     modi: "drun,run,window";

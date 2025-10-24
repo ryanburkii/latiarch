@@ -1,4 +1,4 @@
-/* LatiArch Rofi Setup Menu Configuration - Everforest theme */
+/* LatiArch Rofi Setup Menu Configuration - everforest theme */
 
 configuration {
     modi: "drun,run,window";

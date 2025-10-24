@@ -1,4 +1,4 @@
-/* LatiArch Rofi Install Menu Configuration - Catppuccin theme */
+/* LatiArch Rofi Install Menu Configuration - catppuccin theme */
 
 configuration {
     modi: "drun,run,window";

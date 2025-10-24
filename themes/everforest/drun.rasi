@@ -1,4 +1,4 @@
-/* LatiArch Rofi DRUN Configuration - Everforest theme */
+/* LatiArch Rofi DRUN Configuration - everforest theme */
 
 configuration {
     modi: "drun,run,window";

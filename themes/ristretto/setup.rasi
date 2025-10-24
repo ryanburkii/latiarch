@@ -1,4 +1,4 @@
-/* LatiArch Rofi Setup Menu Configuration - Ristretto theme */
+/* LatiArch Rofi Setup Menu Configuration - ristretto theme */
 
 configuration {
     modi: "drun,run,window";

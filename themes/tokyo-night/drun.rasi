@@ -1,4 +1,4 @@
-/* LatiArch Rofi DRUN Configuration - Tokyo Night theme */
+/* LatiArch Rofi DRUN Configuration - tokyo-night theme */
 
 configuration {
     modi: "drun,run,window";

@@ -1,4 +1,4 @@
-/* LatiArch Rofi DRUN Configuration - Rose Pine theme */
+/* LatiArch Rofi DRUN Configuration - rose-pine theme */
 
 configuration {
     modi: "drun,run,window";

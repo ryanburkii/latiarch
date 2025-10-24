@@ -1,4 +1,4 @@
-/* LatiArch Rofi Theme - Gruvbox theme */
+/* LatiArch Rofi Theme - gruvbox theme */
 
 * {
     bg-col: #282828;
@@ -20,7 +20,7 @@ element-text, element-icon, mode-switcher {
 }
 
 window {
-    height: 400px;
+    height: 600px;
     border: 3px;
     border-color: @border-col;
     border-radius: 0px;
@@ -70,13 +70,12 @@ entry {
 
 listview {
     background-color: @bg-col;
-    columns: 2;
-    lines: 5;
+    columns: 1;
+    lines: 10;
     border-radius: 0px;
     padding: 8px;
     margin: 0px;
 }
-
 
 element {
     background-color: @bg-col;

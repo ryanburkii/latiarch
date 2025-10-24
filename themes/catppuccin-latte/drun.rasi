@@ -1,4 +1,4 @@
-/* LatiArch Rofi DRUN Configuration - Catppuccin Latte theme */
+/* LatiArch Rofi DRUN Configuration - catppuccin-latte theme */
 
 configuration {
     modi: "drun,run,window";

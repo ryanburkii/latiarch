@@ -1,4 +1,4 @@
-/* LatiArch Rofi DRUN Configuration - Osaka Jade theme */
+/* LatiArch Rofi DRUN Configuration - osaka-jade theme */
 
 configuration {
     modi: "drun,run,window";

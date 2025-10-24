@@ -1,4 +1,4 @@
-/* LatiArch Rofi Learn Menu Configuration - Matte Black theme */
+/* LatiArch Rofi Learn Menu Configuration - matte-black theme */
 
 configuration {
     modi: "drun,run,window";

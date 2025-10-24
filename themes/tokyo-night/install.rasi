@@ -1,4 +1,4 @@
-/* LatiArch Rofi Install Menu Configuration - Tokyo Night theme */
+/* LatiArch Rofi Install Menu Configuration - tokyo-night theme */
 
 configuration {
     modi: "drun,run,window";

@@ -1,4 +1,4 @@
-/* LatiArch Rofi DRUN Configuration - Kanagawa theme */
+/* LatiArch Rofi DRUN Configuration - kanagawa theme */
 
 configuration {
     modi: "drun,run,window";

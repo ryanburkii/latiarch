@@ -1,4 +1,4 @@
-/* LatiArch Rofi Update Menu Configuration - Osaka Jade theme */
+/* LatiArch Rofi Update Menu Configuration - osaka-jade theme */
 
 configuration {
     modi: "drun,run,window";

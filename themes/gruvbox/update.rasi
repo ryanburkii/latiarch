@@ -1,4 +1,4 @@
-/* LatiArch Rofi Update Menu Configuration - Gruvbox theme */
+/* LatiArch Rofi Update Menu Configuration - gruvbox theme */
 
 configuration {
     modi: "drun,run,window";

@@ -1,4 +1,4 @@
-/* LatiArch Rofi Update Menu Configuration - Matte Black theme */
+/* LatiArch Rofi Update Menu Configuration - matte-black theme */
 
 configuration {
     modi: "drun,run,window";
