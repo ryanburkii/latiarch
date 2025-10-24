@@ -1,0 +1,146 @@
+/* LatiArch Rofi Theme - Dracula theme */
+
+* {
+    bg-col: #282a36;
+    bg-col-light: #44475a;
+    border-col: #bd93f9;
+    selected-col: #bd93f9;
+    blue: #bd93f9;
+    fg-col: #f8f8f2;
+    fg-col2: #bd93f9;
+    grey: #6272a4;
+    width: 300;
+    font: "JetBrains Mono Nerd Font 14";
+    border-radius: 0px;
+}
+
+element-text, element-icon, mode-switcher {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+window {
+    height: 600px;
+    border: 3px;
+    border-color: @border-col;
+    border-radius: 0px;
+    background-color: @bg-col;
+    padding: 20px;
+    margin: 0px;
+}
+
+mainbox {
+    background-color: @bg-col;
+    border-radius: 0px;
+    padding: 15px;
+}
+
+inputbar {
+    children: [prompt, entry];
+    background-color: @bg-col-light;
+    text-color: @fg-col;
+    border: 2px;
+    border-color: @border-col;
+    border-radius: 0px;
+    padding: 8px;
+    margin: 0px 0px 10px 0px;
+}
+
+prompt {
+    background-color: @blue;
+    text-color: @bg-col;
+    border-radius: 0px;
+    padding: 4px 8px;
+    margin: 0px 8px 0px 0px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    background-color: inherit;
+    text-color: inherit;
+    placeholder-color: @grey;
+    placeholder: "Search applications...";
+    border-radius: 0px;
+    padding: 4px;
+}
+
+listview {
+    background-color: @bg-col;
+    columns: 1;
+    lines: 10;
+    border-radius: 0px;
+    padding: 8px;
+    margin: 0px;
+}
+
+element {
+    background-color: @bg-col;
+    text-color: @fg-col;
+    border-radius: 0px;
+    padding: 8px;
+    margin: 2px;
+}
+
+element-icon {
+    size: 24px;
+}
+
+element selected {
+    background-color: @selected-col;
+    text-color: @bg-col;
+    border-radius: 0px;
+    padding: 8px;
+    margin: 2px;
+}
+
+mode-switcher {
+    background-color: @bg-col-light;
+    text-color: @fg-col;
+    border-radius: 0px;
+    padding: 4px;
+    margin: 0px 0px 10px 0px;
+}
+
+button {
+    background-color: @bg-col-light;
+    text-color: @fg-col;
+    border: 2px;
+    border-color: @border-col;
+    border-radius: 0px;
+    padding: 4px 8px;
+    margin: 2px;
+}
+
+button selected {
+    background-color: @selected-col;
+    text-color: @bg-col;
+    border: 2px;
+    border-color: @selected-col;
+}
+
+message {
+    background-color: @bg-col-light;
+    border: 2px;
+    border-color: @border-col;
+    border-radius: 0px;
+    padding: 8px;
+    margin: 0px;
+}
+
+textbox {
+    background-color: @bg-col-light;
+    text-color: @fg-col;
+    border-radius: 0px;
+    padding: 8px;
+}
+
+error-message {
+    background-color: @bg-col;
+    text-color: @fg-col;
+    border-radius: 0px;
+    padding: 8px;
+}
