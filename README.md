@@ -72,7 +72,7 @@ LatiArch requires a few options preconfigured during the `archinstall` process. 
 
 ### One-Line Install
 ```bash
-curl -sSL https://rjb.rip/latiarch | bash
+curl -fsSL https://rjb.rip/latiarch | bash
 ```
 
 ### Manual Installation
