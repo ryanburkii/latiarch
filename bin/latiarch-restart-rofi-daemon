@@ -1,0 +1,6 @@
+#!/bin/bash
+
+pkill rofi
+# Restart rofi daemon if needed
+setsid uwsm app -- rofi -show drun -theme ~/.config/rofi/config.rasi &
+echo # Always end in success so we don't terminate further running

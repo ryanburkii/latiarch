@@ -1,0 +1,4 @@
+#!/bin/bash
+
+latiarch-refresh-config hypr/hyprsunset.conf
+latiarch-restart-hyprsunset

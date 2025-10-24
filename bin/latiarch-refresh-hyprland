@@ -1,0 +1,7 @@
+#!/bin/bash
+
+latiarch-refresh-config hypr/autostart.conf
+latiarch-refresh-config hypr/bindings.conf
+latiarch-refresh-config hypr/envs.conf
+latiarch-refresh-config hypr/input.conf
+latiarch-refresh-config hypr/hyprland.conf

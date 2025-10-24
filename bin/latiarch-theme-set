@@ -1,0 +1,42 @@
+#!/bin/bash
+
+if [[ -z $1 && $1 != "CNCLD" ]]; then
+  echo "Usage: latiarch-theme-set <theme-name>"
+  exit 1
+fi
+
+THEMES_DIR="$HOME/.config/latiarch/themes/"
+CURRENT_THEME_DIR="$HOME/.config/latiarch/current/theme"
+
+THEME_NAME=$(echo "$1" | sed -E 's/<[^>]+>//g' | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
+THEME_PATH="$THEMES_DIR/$THEME_NAME"
+
+# Check if the theme entered exists
+if [[ ! -d "$THEME_PATH" ]]; then
+  echo "Theme '$THEME_NAME' does not exist in $THEMES_DIR"
+  exit 1
+fi
+
+# Update theme symlinks
+ln -nsf "$THEME_PATH" "$CURRENT_THEME_DIR"
+
+# Apply Rofi theme
+latiarch-theme-set-rofi
+
+# Change background with theme
+latiarch-theme-bg-next
+
+# Restart components to apply new theme
+latiarch-restart-waybar
+latiarch-restart-swayosd
+latiarch-restart-rofi
+hyprctl reload
+pkill -SIGUSR2 btop
+makoctl reload
+
+# Change gnome, browser, vscode themes
+latiarch-theme-set-terminal
+latiarch-theme-set-gnome
+latiarch-theme-set-eza
+latiarch-theme-set-browser
+latiarch-theme-set-vscode

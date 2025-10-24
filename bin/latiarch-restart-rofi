@@ -1,0 +1,5 @@
+#!/bin/bash
+
+pkill rofi
+# Rofi doesn't run as a daemon, just kill any existing instances
+echo # Always end in success so we don't terminate further running

@@ -1,0 +1,164 @@
+/* LatiArch Rofi DRUN Configuration - Modern minimal design with sharp corners */
+
+configuration {
+    modi: "drun,run,window";
+    show-icons: true;
+    terminal: "ghostty";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+    display-drun: "󰀻 Apps";
+    display-run: "󰆍 Run";
+    display-window: "󰖯 Windows";
+    display-emoji: "😀 Emojis";
+    sidebar-mode: true;
+    font: "JetBrains Mono Nerd Font 12";
+    fullscreen: false;
+}
+
+* {
+    bg-col: #1e1e2e;
+    bg-col-light: #2a2a40;
+    border-col: #89b4fa;
+    selected-col: #89b4fa;
+    blue: #89b4fa;
+    fg-col: #cdd6f4;
+    fg-col2: #f5c2e7;
+    grey: #6c7086;
+    width: 600;
+    font: "JetBrains Mono Nerd Font 12";
+    border-radius: 0px;
+}
+
+element-text, element-icon, mode-switcher {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+window {
+    height: 500px;
+    border: 3px;
+    border-color: @border-col;
+    border-radius: 0px;
+    background-color: @bg-col;
+    padding: 8px;
+    margin: 0px;
+}
+
+mainbox {
+    background-color: @bg-col;
+    border-radius: 0px;
+    padding: 8px;
+}
+
+inputbar {
+    children: [prompt, entry];
+    background-color: @bg-col-light;
+    text-color: @fg-col;
+    border: 2px;
+    border-color: @border-col;
+    border-radius: 0px;
+    padding: 8px;
+    margin: 0px 0px 10px 0px;
+}
+
+prompt {
+    background-color: @blue;
+    text-color: @bg-col;
+    border-radius: 0px;
+    padding: 4px 8px;
+    margin: 0px 8px 0px 0px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    background-color: inherit;
+    text-color: inherit;
+    placeholder-color: @grey;
+    placeholder: "Search applications...";
+    border-radius: 0px;
+    padding: 4px;
+}
+
+listview {
+    background-color: @bg-col;
+    columns: 2;
+    lines: 8;
+    border-radius: 0px;
+    padding: 8px;
+    margin: 0px;
+}
+
+
+element {
+    background-color: @bg-col;
+    text-color: @fg-col;
+    border-radius: 0px;
+    padding: 8px;
+    margin: 2px;
+}
+
+element-icon {
+    size: 24px;
+}
+
+element selected {
+    background-color: @selected-col;
+    text-color: @bg-col;
+    border-radius: 0px;
+    padding: 8px;
+    margin: 2px;
+}
+
+mode-switcher {
+    background-color: @bg-col-light;
+    text-color: @fg-col;
+    border-radius: 0px;
+    padding: 4px;
+    margin: 0px 0px 10px 0px;
+}
+
+button {
+    background-color: @bg-col-light;
+    text-color: @fg-col;
+    border: 2px;
+    border-color: @border-col;
+    border-radius: 0px;
+    padding: 4px 8px;
+    margin: 2px;
+}
+
+button selected {
+    background-color: @selected-col;
+    text-color: @bg-col;
+    border: 2px;
+    border-color: @selected-col;
+}
+
+message {
+    background-color: @bg-col-light;
+    border: 2px;
+    border-color: @border-col;
+    border-radius: 0px;
+    padding: 8px;
+    margin: 0px;
+}
+
+textbox {
+    background-color: @bg-col-light;
+    text-color: @fg-col;
+    border-radius: 0px;
+    padding: 8px;
+}
+
+error-message {
+    background-color: @bg-col;
+    text-color: @fg-col;
+    border-radius: 0px;
+    padding: 8px;
+}

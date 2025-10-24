@@ -1,0 +1,6 @@
+source ~/.local/share/latiarch/default/zsh/shell
+source ~/.local/share/latiarch/default/zsh/aliases
+source ~/.local/share/latiarch/default/zsh/functions
+source ~/.local/share/latiarch/default/zsh/prompt
+source ~/.local/share/latiarch/default/zsh/init
+source ~/.local/share/latiarch/default/zsh/envs

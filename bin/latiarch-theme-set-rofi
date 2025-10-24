@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# latiarch-theme-set-rofi: Apply the current theme's Rofi configuration
+
+CURRENT_THEME_DIR="$HOME/.config/latiarch/current/theme"
+ROFI_CONFIG_DIR="$HOME/.config/rofi"
+
+# List of rofi config files to handle
+ROFI_CONFIGS=(
+    "config.rasi"
+    "drun.rasi"
+    "install.rasi"
+    "learn.rasi"
+    "setup.rasi"
+    "style.rasi"
+    "system.rasi"
+    "trigger.rasi"
+    "update.rasi"
+)
+
+# Ensure rofi config directory exists
+mkdir -p "$ROFI_CONFIG_DIR"
+
+# Check if current theme has rofi config files
+if [[ -d "$CURRENT_THEME_DIR" ]]; then
+    echo "Applying Rofi theme from $CURRENT_THEME_DIR"
+    
+    # Apply each rofi config file
+    for config in "${ROFI_CONFIGS[@]}"; do
+        if [[ -f "$CURRENT_THEME_DIR/$config" ]]; then
+            # Create symlink to the theme's config file
+            ln -nsf "$CURRENT_THEME_DIR/$config" "$ROFI_CONFIG_DIR/$config"
+            echo "Applied $config"
+        else
+            echo "Warning: No $config found in current theme directory: $CURRENT_THEME_DIR"
+        fi
+    done
+    
+    # Restart Rofi to apply the new theme
+    latiarch-restart-rofi
+    echo "Restarted Rofi to apply new theme"
+else
+    echo "Warning: No theme directory found: $CURRENT_THEME_DIR"
+fi

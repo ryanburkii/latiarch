@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo -e "\e[32mUpdate LatiArch\e[0m"
+
+git -C $LATIARCH_PATH pull --autostash
+git -C $LATIARCH_PATH diff --check || git -C $LATIARCH_PATH reset --merge

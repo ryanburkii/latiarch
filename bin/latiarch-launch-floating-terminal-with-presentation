@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cmd="$*"
+exec setsid uwsm app -- alacritty --class=LatiArch --title=LatiArch -e bash -c "latiarch-show-logo; $cmd; latiarch-show-done"

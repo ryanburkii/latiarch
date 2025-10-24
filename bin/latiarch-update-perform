@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -e
+
+latiarch-update-available-reset
+latiarch-update-system-pkgs
+latiarch-migrate
+latiarch-update-restart

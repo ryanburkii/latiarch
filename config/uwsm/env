@@ -1,0 +1,11 @@
+# Changes require a relaunch of Hyprland to take effect.
+
+# Ensure LatiArch bins are in the path
+export LATIARCH_PATH=$HOME/.local/share/latiarch
+export PATH=$LATIARCH_PATH/bin/:$PATH
+
+# Set default terminal and editor
+source ~/.config/uwsm/default
+
+# Activate mise if present on the system
+latiarch-cmd-present mise && eval "$(mise activate zsh)"

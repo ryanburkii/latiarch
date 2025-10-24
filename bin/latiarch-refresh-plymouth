@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sudo cp ~/.local/share/latiarch/default/plymouth/* /usr/share/plymouth/themes/latiarch/
+sudo plymouth-set-default-theme latiarch
+
+if command -v limine-mkinitcpio &>/dev/null; then
+  sudo limine-mkinitcpio
+else
+  sudo mkinitcpio -P
+fi

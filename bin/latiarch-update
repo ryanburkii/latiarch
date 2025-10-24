@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -e
+
+latiarch-snapshot create || [ $? -eq 127 ]
+latiarch-update-git
+latiarch-update-perform

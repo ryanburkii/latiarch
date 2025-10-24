@@ -1,0 +1,5 @@
+#!/bin/bash
+
+latiarch-refresh-config waybar/config.jsonc
+latiarch-refresh-config waybar/style.css
+latiarch-restart-waybar

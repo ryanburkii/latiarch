@@ -1,0 +1,5 @@
+#!/bin/bash
+
+latiarch-refresh-config swayosd/config.toml
+latiarch-refresh-config swayosd/style.css
+latiarch-restart-swayosd

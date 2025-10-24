@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -e
+
+FIRST_RUN_MODE=~/.local/state/latiarch/first-run.mode
+
+if [[ -f "$FIRST_RUN_MODE" ]]; then
+  rm -f "$FIRST_RUN_MODE"
+
+  bash "$LATIARCH_PATH/install/first-run/battery-monitor.sh"
+  bash "$LATIARCH_PATH/install/first-run/firewall.sh"
+  bash "$LATIARCH_PATH/install/first-run/gnome-theme.sh"
+  sudo rm -f /etc/sudoers.d/first-run
+
+  bash "$LATIARCH_PATH/install/first-run/wifi.sh"
+  bash "$LATIARCH_PATH/install/first-run/welcome.sh"
+fi
