@@ -1,5 +1,19 @@
 /* LatiArch Rofi Update Menu Configuration - rose-pine theme */
 
+* {
+    bg-col: #faf4ed;
+    bg-col-light: #f2e9e1;
+    border-col: #575279;
+    selected-col: #88c0d0;
+    blue: #88c0d0;
+    fg-col: #575279;
+    fg-col2: #88c0d0;
+    grey: #797593;
+    width: 600;
+    font: "JetBrains Mono Nerd Font 14";
+    border-radius: 0px;
+}
+
 element-text, element-icon, mode-switcher {
     background-color: inherit;
     text-color: inherit;
