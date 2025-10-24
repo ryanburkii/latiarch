@@ -47,9 +47,28 @@
 ## 🚀 Quick Installation
 
 ### Prerequisites
-- Arch Linux base system
+- Arch Linux base system (see below for required configuration)
 - Internet connection
 - Root access
+
+### **Required** `archinstall` options
+LatiArch requires a few options preconfigured during the `archinstall` process. Make sure the below options are set, and leave any other options not mentioned blank:
+| Menu | Option |
+| ------ | ------ |
+| Mirrors & Repositories   | Select regions > Your country   |
+| Disk Configuration | Partitioning > Default partitioning layout > Select the correct disk  |
+| Disk > File system | btrfs + default structure = yes & use compression |
+| Disk > Disk encryption | Encryption type: LUKS, enter an encryption password |
+| Disk > Disk encryption | Partitions > Select partition |
+| Hostname | Set a name for your computer |
+| Bootloader | Limine |
+| Authentication > Root password | Set a root password |
+| Authentication > User account | Create a user & make Superuser |
+| Applications > Audio | Pipewire |
+| Network configuration | Copy ISO configuration |
+| Timezone | Set your timezone |
+
+**Note:** Due to how LatiArch is configured, the root password, disk encryption password, and user password must all be the same.
 
 ### One-Line Install
 ```bash
