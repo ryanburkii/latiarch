@@ -5,10 +5,11 @@ limine-mkinitcpio-hook
 limine-snapper-sync
 notion-app-electron
 python-terminaltexteffects
+qt5-remoteobjects
+rofi-wayland
 slack-desktop
+ttf-ia-writer
 typora
 tzupdate
 ufw-docker
-rofi-wayland
 yaru-icon-theme
-ttf-ia-writer

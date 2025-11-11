@@ -1,5 +1,4 @@
 # LatiArch core package list installed via install/packages.sh
-# This file is also used by the ISO builder when determining needs
 
 alacritty
 autoconf-archive
@@ -47,7 +46,7 @@ gvfs-smb
 htop
 hypridle
 hyprland
-hyprland-qtutils
+hyprland-guiutils
 hyprlock
 hyprpicker
 hyprshot

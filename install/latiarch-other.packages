@@ -1,5 +1,4 @@
 # Packages installed outside of install/packages.sh or optional packages
-# Utilized by ISO builder to ensure package availability in the ISO
 
 autoconf-archive
 base
