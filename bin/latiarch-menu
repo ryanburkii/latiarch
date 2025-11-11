@@ -390,7 +390,7 @@ show_remove_menu() {
 }
 
 show_update_menu() {
-  case $(menu "Update" "<span font='latiarch'>&#xE800;</span> LatiArch\n  Config\n󰸌  Extra Themes\n  Process\n󰇅  Hardware\n  Password\n  Timezone" "" "" "update.rasi") in
+  case $(menu "Update" "<span font='latiarch'>&#xE800;</span>  LatiArch\n  Config\n󰸌  Extra Themes\n  Process\n󰇅  Hardware\n  Password\n  Timezone" "" "" "update.rasi") in
   *LatiArch*) present_terminal latiarch-update ;;
   *Config*) show_update_config_menu ;;
   *Themes*) present_terminal latiarch-theme-update ;;

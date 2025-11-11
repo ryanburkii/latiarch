@@ -33,7 +33,7 @@ if gum confirm --padding "0 0 0 $((PADDING_LEFT + 32))" --show-help=false --defa
 
   if [[ -n "${LATIARCH_CHROOT_INSTALL:-}" ]]; then
     touch /var/tmp/latiarch-install-completed
-    exit 0
+    sudo reboot 2>/dev/null
   else
     sudo reboot 2>/dev/null
   fi
