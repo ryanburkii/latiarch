@@ -66,6 +66,7 @@ less
 libpulse
 libqalculate
 libsass
+libsecret
 libva-intel-driver
 libyaml
 linux-headers
@@ -96,12 +97,12 @@ postgresql-libs
 power-profiles-daemon
 python-gobject
 python-poetry-core
-qt5-remoteobjects
 qt5-wayland
 qt6-wayland
 ripgrep
 sassc
 satty
+sddm
 slurp
 snapper
 starship
