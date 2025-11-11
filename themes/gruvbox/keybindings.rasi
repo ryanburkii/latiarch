@@ -1,0 +1,23 @@
+@import "style.rasi"
+
+* {
+    width: 800;
+    font: "JetBrains Mono Nerd Font 12";
+}
+
+window {
+    height: 600px;
+    padding: 20px;
+}
+
+listview {
+    lines: 20;
+}
+
+entry {
+    placeholder: "Search keybindings...";
+}
+
+element-icon {
+    size: 16px;
+}

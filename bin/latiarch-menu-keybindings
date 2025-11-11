@@ -85,9 +85,10 @@ parse_bindings() {
 
 monitor_height=$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .height')
 menu_height=$((monitor_height * 40 / 100))
+theme_path="$HOME/.config/rofi/keybindings.rasi"
+[[ -f $theme_path ]] || theme_path="$HOME/.config/latiarch/current/theme/keybindings.rasi"
 
 dynamic_bindings | \
   sort -u | \
   parse_bindings | \
-  rofi -dmenu -theme ~/.config/latiarch/default/rofi/themes/keybindings.rasi -p 'Keybindings' -width 800 -lines "$menu_height"
-
+  rofi -dmenu -theme "$theme_path" -p 'Keybindings' -width 800 -lines "$menu_height"

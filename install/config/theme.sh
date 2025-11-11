@@ -10,8 +10,8 @@ for f in ~/.local/share/latiarch/themes/*; do ln -nfs "$f" ~/.config/latiarch/th
 
 # Set initial theme
 mkdir -p ~/.config/latiarch/current
-ln -snf ~/.config/latiarch/themes/tokyo-night ~/.config/latiarch/current/theme
-ln -snf ~/.config/latiarch/current/theme/backgrounds/1-scenery-pink-lakeside-sunset-lake-landscape-scenic-panorama-7680x3215-144.png ~/.config/latiarch/current/background
+ln -snf ~/.config/latiarch/themes/dracula ~/.config/latiarch/current/theme
+ln -snf ~/.config/latiarch/current/theme/backgrounds/sasuke_uchiha__naruto.png ~/.config/latiarch/current/background
 
 # Set specific app links for current theme
 ln -snf ~/.config/latiarch/current/theme/neovim.lua ~/.config/nvim/lua/plugins/theme.lua

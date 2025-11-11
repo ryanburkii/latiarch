@@ -16,6 +16,7 @@ ROFI_CONFIGS=(
     "system.rasi"
     "trigger.rasi"
     "update.rasi"
+    "keybindings.rasi"
 )
 
 # Ensure rofi config directory exists
