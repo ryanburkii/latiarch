@@ -24,8 +24,6 @@ fi
 
 if sudo test -f /etc/sudoers.d/99-latiarch-installer; then
   sudo rm -f /etc/sudoers.d/99-latiarch-installer &>/dev/null
-  echo
-  echo_in_style "Remember to remove USB installer!"
 fi
 
 # Exit gracefully if user chooses not to reboot
@@ -33,10 +31,10 @@ if gum confirm --padding "0 0 0 $((PADDING_LEFT + 32))" --show-help=false --defa
   # Clear screen to hide any shutdown messages
   clear
 
-  # Use systemctl if available, otherwise fallback to reboot command
-  if command -v systemctl &>/dev/null; then
-    systemctl reboot --no-wall 2>/dev/null
+  if [[ -n "${LATIARCH_CHROOT_INSTALL:-}" ]]; then
+    touch /var/tmp/latiarch-install-completed
+    exit 0
   else
-    reboot 2>/dev/null
+    sudo reboot 2>/dev/null
   fi
 fi
