@@ -1,15 +1,25 @@
 # LatiArch AUR package list installed via yay
 
+blueberry
+bridge-utils
 cursor-bin
+debtap
+docker-desktop
 limine-mkinitcpio-hook
 limine-snapper-sync
+microsoft-edge-stable-bin
+ninjarmm-ncplayer
 notion-app-electron
+pipes.sh
 python-terminaltexteffects
 qt5-remoteobjects
-rofi-wayland
 slack-desktop
 ttf-ia-writer
 typora
 tzupdate
 ufw-docker
 yaru-icon-theme
+yay
+yay-debug
+zen-browser-bin
+zoom

@@ -1,33 +1,16 @@
-/* LatiArch Rofi Configuration - Modern minimal design with sharp corners */
-
-configuration {
-    modi: "drun,run,window";
-    show-icons: true;
-    terminal: "ghostty";
-    drun-display-format: "{icon} {name}";
-    location: 0;
-    disable-history: false;
-    hide-scrollbar: true;
-    display-drun: "󰀻 Apps";
-    display-run: "󰆍 Run";
-    display-window: "󰖯 Windows";
-    display-emoji: "😀 Emojis";
-    sidebar-mode: true;
-    font: "JetBrains Mono Nerd Font 12";
-    fullscreen: false;
-}
+/* LatiArch Rofi Theme - Dracula theme */
 
 * {
-    bg-col: #1e1e2e;
-    bg-col-light: #2a2a40;
-    border-col: #89b4fa;
-    selected-col: #89b4fa;
-    blue: #89b4fa;
-    fg-col: #cdd6f4;
-    fg-col2: #f5c2e7;
-    grey: #6c7086;
-    width: 250;
-    font: "JetBrains Mono Nerd Font 12";
+    bg-col: #282a36;
+    bg-col-light: #44475a;
+    border-col: #bd93f9;
+    selected-col: #bd93f9;
+    blue: #bd93f9;
+    fg-col: #f8f8f2;
+    fg-col2: #bd93f9;
+    grey: #6272a4;
+    width: 300;
+    font: "JetBrains Mono Nerd Font 14";
     border-radius: 0px;
 }
 
@@ -37,19 +20,19 @@ element-text, element-icon, mode-switcher {
 }
 
 window {
-    height: 575px;
+    height: 600px;
     border: 3px;
     border-color: @border-col;
     border-radius: 0px;
     background-color: @bg-col;
-    padding: 8px;
+    padding: 20px;
     margin: 0px;
 }
 
 mainbox {
     background-color: @bg-col;
     border-radius: 0px;
-    padding: 8px;
+    padding: 15px;
 }
 
 inputbar {
@@ -87,13 +70,12 @@ entry {
 
 listview {
     background-color: @bg-col;
-    columns: 2;
-    lines: 6;
+    columns: 1;
+    lines: 10;
     border-radius: 0px;
     padding: 8px;
     margin: 0px;
 }
-
 
 element {
     background-color: @bg-col;
