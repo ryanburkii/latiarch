@@ -5,11 +5,7 @@ echo "Installing base packages..."
 mapfile -t packages < <(grep -v '^#' "$LATIARCH_INSTALL/latiarch-base.packages" | grep -v '^$')
 if [ ${#packages[@]} -gt 0 ]; then
     sudo pacman -S --noconfirm --needed "${packages[@]}"
-    if [ $? -ne 0 ]; then
-        echo "Warning: Some base packages failed to install. Continuing..."
-    else
-        echo "Base packages installed successfully."
-    fi
+    echo "Base packages installed successfully."
 else
     echo "No base packages to install."
 fi

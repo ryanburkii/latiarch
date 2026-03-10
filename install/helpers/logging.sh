@@ -7,18 +7,25 @@ start_log_output() {
   local ANSI_HIDE_CURSOR="\033[?25l"
   local ANSI_RESET="\033[0m"
   local ANSI_GRAY="\033[90m"
+  local log_lines=20
+  local max_line_width=$((LOGO_WIDTH - 4))
+
+  # Pre-allocate space so the 20 log lines never push past the terminal bottom,
+  # which would cause scrolling and invalidate the saved cursor position.
+  printf "%${log_lines}s" | tr ' ' '\n'
+  printf "\033[${log_lines}A"
 
   # Save cursor position and hide cursor
   printf $ANSI_SAVE_CURSOR
   printf $ANSI_HIDE_CURSOR
 
   (
-    local log_lines=20
-    local max_line_width=$((LOGO_WIDTH - 4))
-
     while true; do
-      # Read the last N lines into an array
-      mapfile -t current_lines < <(tail -n $log_lines "$LATIARCH_INSTALL_LOG_FILE" 2>/dev/null)
+      # Strip ANSI escape codes and carriage returns from log lines before displaying.
+      # Tools like pacman write cursor-movement codes to stdout which corrupt the
+      # monitor's cursor position when echoed back to the terminal.
+      mapfile -t current_lines < <(tail -n $log_lines "$LATIARCH_INSTALL_LOG_FILE" 2>/dev/null \
+        | sed 's/\x1B\[[0-9;?]*[a-zA-Z]//g; s/\r//g')
 
       # Build complete output buffer with escape sequences
       output=""
