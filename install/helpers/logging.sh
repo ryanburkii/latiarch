@@ -134,7 +134,7 @@ run_logged() {
   echo "[$(date '+%Y-%m-%d %H:%M:%S')] Starting: $script" >>"$LATIARCH_INSTALL_LOG_FILE"
 
   # Use bash -c to create a clean subshell
-  bash -c "source '$script'" </dev/null >>"$LATIARCH_INSTALL_LOG_FILE" 2>&1
+  bash -eEo pipefail -c "source '$script'" </dev/null >>"$LATIARCH_INSTALL_LOG_FILE" 2>&1
 
   local exit_code=$?
 

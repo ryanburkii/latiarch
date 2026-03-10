@@ -16,4 +16,8 @@ sudo chmod 440 /etc/sudoers.d/99-latiarch-installer
 (while true; do sudo -n true; sleep 60; done) &
 export SUDO_KEEPALIVE_PID=$!
 
+# Enable multilib repo (required for lib32-* packages)
+sudo sed -i '/^#\[multilib\]/{N;s/^#\[multilib\]\n#Include/[multilib]\nInclude/}' /etc/pacman.conf
+sudo pacman -Sy --noconfirm
+
 start_install_log
