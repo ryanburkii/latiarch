@@ -52,6 +52,12 @@ stop_log_output() {
     wait $monitor_pid 2>/dev/null || true
     unset monitor_pid
   fi
+
+  if [[ -n "${SUDO_KEEPALIVE_PID:-}" ]]; then
+    kill "$SUDO_KEEPALIVE_PID" 2>/dev/null || true
+    wait "$SUDO_KEEPALIVE_PID" 2>/dev/null || true
+    unset SUDO_KEEPALIVE_PID
+  fi
 }
 
 start_install_log() {

@@ -20,7 +20,7 @@ if ! command -v yay &> /dev/null; then
     cd /tmp
     git clone https://aur.archlinux.org/yay.git
     cd yay
-    makepkg -si --noconfirm
+    makepkg -si --noconfirm < /dev/tty
     cd /
     rm -rf /tmp/yay
 fi
@@ -30,6 +30,6 @@ if [ -f "$LATIARCH_INSTALL/latiarch-aur.packages" ]; then
     echo "Installing AUR packages..."
     mapfile -t aur_packages < <(grep -v '^#' "$LATIARCH_INSTALL/latiarch-aur.packages" | grep -v '^$')
     if [ ${#aur_packages[@]} -gt 0 ]; then
-        yay -S --noconfirm --needed "${aur_packages[@]}"
+        yay -S --noconfirm --needed "${aur_packages[@]}" < /dev/tty
     fi
 fi
