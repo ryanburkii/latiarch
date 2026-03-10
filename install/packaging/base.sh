@@ -16,13 +16,20 @@ fi
 
 # Install yay if not already installed
 if ! command -v yay &> /dev/null; then
+    echo "Installing yay build dependencies..."
+    sudo pacman -S --noconfirm --needed base-devel git
     echo "Installing yay..."
     cd /tmp
+    rm -rf yay
     git clone https://aur.archlinux.org/yay.git
     cd yay
     makepkg -si --noconfirm < /dev/tty
     cd /
     rm -rf /tmp/yay
+    if ! command -v yay &> /dev/null; then
+        echo "ERROR: yay installation failed."
+        exit 1
+    fi
 fi
 
 # Install AUR packages
