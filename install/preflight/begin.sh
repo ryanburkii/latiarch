@@ -18,6 +18,6 @@ export SUDO_KEEPALIVE_PID=$!
 
 # Enable multilib repo (required for lib32-* packages)
 sudo sed -i '/^#\[multilib\]/{N;s/^#\[multilib\]\n#Include/[multilib]\nInclude/}' /etc/pacman.conf
-sudo pacman -Sy --noconfirm
+sudo pacman -Sy --noconfirm > /dev/null 2>&1
 
 start_install_log

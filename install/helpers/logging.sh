@@ -1,8 +1,6 @@
 #!/bin/bash
 
 start_log_output() {
-  local ANSI_SAVE_CURSOR="\033[s"
-  local ANSI_RESTORE_CURSOR="\033[u"
   local ANSI_CLEAR_LINE="\033[2K"
   local ANSI_HIDE_CURSOR="\033[?25l"
   local ANSI_RESET="\033[0m"
@@ -10,26 +8,26 @@ start_log_output() {
   local log_lines=20
   local max_line_width=$((LOGO_WIDTH - 4))
 
-  # Pre-allocate space so the 20 log lines never push past the terminal bottom,
-  # which would cause scrolling and invalidate the saved cursor position.
-  printf "%${log_lines}s" | tr ' ' '\n'
-  printf "\033[${log_lines}A"
+  # Anchor the log area to the bottom of the terminal using absolute row positions.
+  # This avoids the fragile save/restore cursor approach, which breaks whenever
+  # anything writes to the terminal (causing scrolling or cursor movement) between
+  # the save and the restore.
+  local log_start_row=$(( TERM_HEIGHT - log_lines + 1 ))
 
-  # Save cursor position and hide cursor
-  printf $ANSI_SAVE_CURSOR
   printf $ANSI_HIDE_CURSOR
 
   (
     while true; do
       # Strip ANSI escape codes and carriage returns from log lines before displaying.
       # Tools like pacman write cursor-movement codes to stdout which corrupt the
-      # monitor's cursor position when echoed back to the terminal.
+      # terminal state when echoed back.
       mapfile -t current_lines < <(tail -n $log_lines "$LATIARCH_INSTALL_LOG_FILE" 2>/dev/null \
         | sed 's/\x1B\[[0-9;?]*[a-zA-Z]//g; s/\r//g')
 
-      # Build complete output buffer with escape sequences
+      # Build complete output buffer using absolute cursor positions per line.
       output=""
       for ((i = 0; i < log_lines; i++)); do
+        local row=$(( log_start_row + i ))
         line="${current_lines[i]:-}"
 
         # Truncate if needed
@@ -37,15 +35,15 @@ start_log_output() {
           line="${line:0:$max_line_width}..."
         fi
 
-        # Add clear line escape and formatted output for each line
+        # Position cursor at absolute row, clear line, then write formatted output
         if [ -n "$line" ]; then
-          output+="${ANSI_CLEAR_LINE}${ANSI_GRAY}${PADDING_LEFT_SPACES}  → ${line}${ANSI_RESET}\n"
+          output+="\033[${row};1H${ANSI_CLEAR_LINE}${ANSI_GRAY}${PADDING_LEFT_SPACES}  → ${line}${ANSI_RESET}"
         else
-          output+="${ANSI_CLEAR_LINE}${PADDING_LEFT_SPACES}\n"
+          output+="\033[${row};1H${ANSI_CLEAR_LINE}"
         fi
       done
 
-      printf "${ANSI_RESTORE_CURSOR}%b" "$output"
+      printf "%b" "$output"
 
       sleep 0.1
     done
